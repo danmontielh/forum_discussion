@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   
-  resources :topics
+  resources :channels
+  resources :topics do
+    resources :replies
+  end
   root 'topics#index'
 
   devise_for :users, controllers: {registrations: 'registrations'}
