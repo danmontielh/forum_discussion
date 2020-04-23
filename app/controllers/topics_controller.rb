@@ -1,20 +1,26 @@
 class TopicsController < ApplicationController
   before_action :set_topic, only: [:show, :edit, :update, :destroy]
+  before_action :find_channels, only: [:index, :show, :new, :edit]
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /topics
   # GET /topics.json
   def index
-    @topics = Topic.all
+    @topics = Topic.all.order('created_at desc')
+    
   end
 
   # GET /topics/1
   # GET /topics/1.json
   def show
+    @topics = Topic.all.order('created_at desc')
+    
   end
 
   # GET /topics/new
   def new
-    @topic = Topic.new
+    @topics = current_user-topics.build
+    
   end
 
   # GET /topics/1/edit
@@ -24,7 +30,7 @@ class TopicsController < ApplicationController
   # POST /topics
   # POST /topics.json
   def create
-    @topic = Topic.new(topic_params)
+    @topic = current_user.topics.build(topic_params)
 
     respond_to do |format|
       if @topic.save
@@ -71,4 +77,10 @@ class TopicsController < ApplicationController
     def topic_params
       params.require(:topic).permit(:title, :content)
     end
+
+    def find_channel
+      @channels = Channel.all.order('created_at desc')
+    end
+    
+
 end
