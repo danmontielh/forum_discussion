@@ -32,17 +32,16 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'bulma-rails', '~> 0.6.2'
-gem 'simple_form', '~> 3.5'
-gem 'devise', '~> 4.4', '>= 4.4.1'
+gem 'devise', '~> 4.7', '>= 4.7.1'
+gem 'bulma-rails', '~> 0.8.0'
+gem 'simple_form', '~> 5.0', '>= 5.0.2'
 gem 'gravatar_image_tag', '~> 1.2'
-gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
+gem 'jquery-rails', '~> 4.3', '>= 4.3.5'
 gem 'rolify', '~> 5.2'
-gem 'cancancan', '~> 2.1', '>= 2.1.3'
-gem 'friendly_id', '~> 5.2', '>= 5.2.3'
-gem 'redcarpet', '~> 3.4'
+gem 'cancancan', '~> 3.1'
+gem 'friendly_id', '~> 5.3'
+gem 'redcarpet', '~> 3.5'
 gem 'coderay', '~> 1.1', '>= 1.1.2'
-
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
